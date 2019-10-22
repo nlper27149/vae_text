@@ -5,4 +5,5 @@
 <br>
 **cnn_vae.py**, using conv and deconv as enconder and decoder for vae
 <br>
+<br>
 **rnn_vae.py**, using lstm as enconder and decoder for vae
