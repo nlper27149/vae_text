@@ -61,7 +61,7 @@ with tf.variable_scope("decoder"):
 
     rec_loss = tf.reduce_sum(tf.nn.softmax_cross_entropy_with_logits(labels=input_labels, logits=last_out),1)
     kl_loss =  - 0.5 * tf.reduce_sum(1 + stddev - tf.square(mean) - tf.exp(stddev), axis=-1)
-    vae_loss = tf.reduce_mean(rec_loss+kl_loss)
+    vae_loss = tf.reduce_mean(rec_loss)
 
     opti = tf.train.AdamOptimizer(learning_rate=0.01)
     train_op = opti.minimize(vae_loss)
